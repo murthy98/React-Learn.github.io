@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
+
 class Login extends Component{
     state={
         email:'',
@@ -17,12 +20,13 @@ class Login extends Component{
             password:this.state.password,
             returnSecureToken: true
         }
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyD__0Z9EnBPATxTaLLA8lUFG0o022N60KA';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD__0Z9EnBPATxTaLLA8lUFG0o022N60KA';
 
         axios.post(url,authdata).then(response=>{
-           
-            <Redirect to="/home"/>
+           console.log(response);
+           return <Redirect to="/home"/>;
         }).catch(err=>{
+            //console.log(err);
             this.state.error=err;
         })
     }
@@ -32,6 +36,7 @@ class Login extends Component{
          <div className="row">
           <div className="card border-success mb-3">
           <div className="card-header">Login</div>
+          <form onSubmit={this.props.onAuth}>
           <div className="card-body">
           <div className=" row mb-3">
         <div className="col-lg-1">
@@ -50,15 +55,23 @@ class Login extends Component{
           </div>
           </div>
           <div>
-          <input type="submit" className="btn btn-success" value="Login" onClick={()=>this.appLogin()}/>
+          <input type="submit" className="btn btn-success" value="Login" />
           </div>
           <div className="card-footer">
               <a href="/register">Register Here</a>
           </div>
           </div>
+          </form>
           </div>
           </div>
       </div>
     );}
 }
-export default Login;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: () => dispatch( actions.auth( this.state.email, this.state.email, false ) ),
+        onSetAuthRedirectPath: () => dispatch( actions.setAuthRedirectPath( '/home' ) )
+    };
+};
+export default connect( null, mapDispatchToProps )(Login);

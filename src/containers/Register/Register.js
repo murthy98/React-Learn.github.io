@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
+import {Redirect,withRouter} from 'react-router-dom';
 class Register extends Component{
     state={
         email:'',
@@ -17,9 +17,10 @@ class Register extends Component{
             password:this.state.password,
             returnSecureToken: true
         }
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyD__0Z9EnBPATxTaLLA8lUFG0o022N60KA';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD__0Z9EnBPATxTaLLA8lUFG0o022N60KA';
         axios.post(url,authdata).then(response=>{
-            <Redirect to="/"/>
+            console.log(response);
+            return <Redirect to="/"/>;
         }).catch(err=>{
             this.state.error=err;
         })
@@ -66,4 +67,4 @@ class Register extends Component{
       </div>
     );}
 }
-export default Register;
+export default withRouter(Register);
