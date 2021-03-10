@@ -1,4 +1,4 @@
-import { Route, withRouter} from 'react-router-dom';
+import { Route, withRouter,Switch, Redirect} from 'react-router-dom';
 import React,{Component} from 'react';
 import './App.css';
 import Login from './containers/Login/Login';
@@ -7,11 +7,13 @@ import Home from './containers/Home/Home';
 class App extends Component {
   render(){
   return (
-    <div>
-      <Route path="/" exact component={Login}/>
+    <Switch>
+      
      <Route path="/register" component={Register}/>
      <Route path="/home" component={Home}/>
-    </div>
+     <Route path="/" exact component={Login}/>
+     <Redirect to="/"/>
+    </Switch>
   );}
 }
 

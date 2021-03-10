@@ -2,23 +2,23 @@ import axios from 'axios';
 
 import * as actionTypes from './actionType';
 
-export const authStart = () => {
+export const registerStart = () => {
     return {
-        type: actionTypes.AUTH_START
+        type: actionTypes.REGISTER_START
     };
 };
 
-export const authSuccess = (token, userId) => {
+export const registerSuccess = (token, userId) => {
     return {
-        type: actionTypes.AUTH_SUCCESS,
+        type: actionTypes.REGISTER_SUCCESS,
         idToken: token,
         userId: userId
     };
 };
 
-export const authFail = (error) => {
+export const registerFail = (error) => {
     return {
-        type: actionTypes.AUTH_FAIL,
+        type: actionTypes.REGISTER_FAIL,
         error: error
     };
 };
@@ -28,41 +28,34 @@ export const logout = () => {
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('userId');
     return {
-        type: actionTypes.AUTH_LOGOUT
+        type: actionTypes.REGISTER_LOGOUT
     };
 };
 
 
 
-export const auth = (email, password) => {
+export const register = (email, password) => {
     return dispatch => {
-        dispatch(authStart());
-        console.log("dispatch")
-        const authData = {
+        dispatch(registerStart());
+        //console.log("dispatch")
+        const registerData = {
             email: email,
             password: password,
             returnSecureToken: true
         };
-        
-         const   url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDoY-xvMUmUCuS5YbQPtbTPX2LnhQ0vmDM';
-        
-        axios.post(url, authData)
+        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyDoY-xvMUmUCuS5YbQPtbTPX2LnhQ0vmDM';
+       
+        axios.post(url, registerData)
             .then(response => {
                 const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
                 localStorage.setItem('token', response.data.idToken);
                 localStorage.setItem('expirationDate', expirationDate);
                 localStorage.setItem('userId', response.data.localId);
-                dispatch(authSuccess(response.data.idToken, response.data.localId));
+                //console.log(response.data.idToken);
+                dispatch(registerSuccess(response.data.idToken, response.data.localId));
             })
             .catch(err => {
-                dispatch(authFail(err.response.data.error));
+                dispatch(registerFail(err.response.data.error));
             });
-    };
-};
-
-export const setAuthRedirectPath = (path) => {
-    return {
-        type: actionTypes.SET_AUTH_REDIRECT_PATH,
-        path: path
     };
 };
