@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/murthy98/React-Learn.github.io/nutramin/static/css/main.d04f489d.chunk.css",
+    "main.js": "/murthy98/React-Learn.github.io/nutramin/static/js/main.aad2e78d.chunk.js",
+    "main.js.map": "/murthy98/React-Learn.github.io/nutramin/static/js/main.aad2e78d.chunk.js.map",
+    "runtime-main.js": "/murthy98/React-Learn.github.io/nutramin/static/js/runtime-main.7972d177.js",
+    "runtime-main.js.map": "/murthy98/React-Learn.github.io/nutramin/static/js/runtime-main.7972d177.js.map",
+    "static/css/2.5e58109e.chunk.css": "/murthy98/React-Learn.github.io/nutramin/static/css/2.5e58109e.chunk.css",
+    "static/js/2.4d226489.chunk.js": "/murthy98/React-Learn.github.io/nutramin/static/js/2.4d226489.chunk.js",
+    "static/js/2.4d226489.chunk.js.map": "/murthy98/React-Learn.github.io/nutramin/static/js/2.4d226489.chunk.js.map",
+    "index.html": "/murthy98/React-Learn.github.io/nutramin/index.html",
+    "static/css/2.5e58109e.chunk.css.map": "/murthy98/React-Learn.github.io/nutramin/static/css/2.5e58109e.chunk.css.map",
+    "static/css/main.d04f489d.chunk.css.map": "/murthy98/React-Learn.github.io/nutramin/static/css/main.d04f489d.chunk.css.map",
+    "static/js/2.4d226489.chunk.js.LICENSE.txt": "/murthy98/React-Learn.github.io/nutramin/static/js/2.4d226489.chunk.js.LICENSE.txt",
+    "static/js/main.aad2e78d.chunk.js.LICENSE.txt": "/murthy98/React-Learn.github.io/nutramin/static/js/main.aad2e78d.chunk.js.LICENSE.txt",
+    "static/media/angular.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/angular.b5045666.jpg",
+    "static/media/argon-react-white.png": "/murthy98/React-Learn.github.io/nutramin/static/media/argon-react-white.e4dd3b41.png",
+    "static/media/argon-react.png": "/murthy98/React-Learn.github.io/nutramin/static/media/argon-react.128d71d3.png",
+    "static/media/bootstrap.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/bootstrap.bd712487.jpg",
+    "static/media/all.min.css": "/murthy98/React-Learn.github.io/nutramin/static/media/fa-solid-900.f4f93856.woff",
+    "static/media/github.svg": "/murthy98/React-Learn.github.io/nutramin/static/media/github.6c955556.svg",
+    "static/media/google.svg": "/murthy98/React-Learn.github.io/nutramin/static/media/google.eae9aa93.svg",
+    "static/media/nucleo.css": "/murthy98/React-Learn.github.io/nutramin/static/media/nucleo-icons.d6a66724.ttf",
+    "static/media/profile-cover.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/profile-cover.97899245.jpg",
+    "static/media/react.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/react.0e8c9066.jpg",
+    "static/media/sketch.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/sketch.a6af780a.jpg",
+    "static/media/team-1-800x800.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/team-1-800x800.fa5a7ac2.jpg",
+    "static/media/team-2-800x800.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/team-2-800x800.3e08ef14.jpg",
+    "static/media/team-3-800x800.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/team-3-800x800.70911cdd.jpg",
+    "static/media/team-4-800x800.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/team-4-800x800.99c612eb.jpg",
+    "static/media/vue.jpg": "/murthy98/React-Learn.github.io/nutramin/static/media/vue.43bd93a8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7972d177.js",
+    "static/css/2.5e58109e.chunk.css",
+    "static/js/2.4d226489.chunk.js",
+    "static/css/main.d04f489d.chunk.css",
+    "static/js/main.aad2e78d.chunk.js"
+  ]
+}
